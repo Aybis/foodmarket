@@ -32,6 +32,7 @@ class AbsensiController extends Controller
     {
         $month = date('m');
         $year = date('Y');
+        return view('absensi.check_in');
 
         $dataLast = Absensi::with(['user', 'detail'])
         ->whereMonth('created_at', $month)

@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\FoodController;
 use App\Http\Controllers\Api\MidtransController;
 use App\Http\Controllers\Api\TransactionController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,9 @@ Route::post('register', [UserController::class, 'register']);
 
 
 Route::get('food', [FoodController::class, 'all']);
+Route::get('unit', [UnitController::class, 'getUnit']);
+Route::get('employee', [UnitController::class, 'getDataEmployee']);
+Route::get('subunit', [UnitController::class, 'getSubUnit']);
+Route::get('units', [UnitController::class, 'index']);
+
 Route::post('midtrans/callback', [MidtransController::class, 'callback']);

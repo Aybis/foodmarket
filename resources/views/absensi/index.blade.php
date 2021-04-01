@@ -32,7 +32,7 @@
                             <th class="border px-4 py-2">Location</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody hidden>
                         @php
                             $no = 1;
                         @endphp

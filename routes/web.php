@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,9 @@ Route::prefix('dashboard')->middleware(['auth:sanctum', 'admin'])->group(functio
     Route::resource('transactions', TransactionController::class);
     Route::resource('absensis', AbsensiController::class);
 });
+
+Route::resource('units', UnitController::class);
+Route::get('units/list', [UnitController::class, 'getUnitAndSubUnit']);
 
 // Midtrans related
 Route::get('midtrans/success', [MidtransController::class, 'success']);
